@@ -9,6 +9,10 @@ let mongoDb = null;
 
 app.use(bodyParser.json());
 
+app.get('/hello', (req, res) => {
+    res.send({ message : "MIKEY LIKES IT?????"});
+});
+
 app.get('/items', (req, res) => {
     mongoDb.collection('groceries')
         .find({}).toArray()
